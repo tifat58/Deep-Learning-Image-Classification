@@ -4,6 +4,13 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D, BatchNormalization
 from keras.optimizers import Adam
+import LoadDataset as LD
+
+# Example for retriving data.
+# ToDO uncomment the line below to load images. it will return
+# ToDO image matrixes appended in an array, and corresponding Y vector.
+# load_data = LD.LoadData('/Users/mdabdulkadir/WS1819/ADAI/imagetest') # give the directory address.
+# X ,Y = load_data.generate_data()
 
 # Hyperparameters
 batch_size = 128
