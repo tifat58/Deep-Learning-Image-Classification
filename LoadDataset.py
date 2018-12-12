@@ -36,5 +36,3 @@ class LoadData:
         print('Files in current directory: ', os.listdir(current_dir))
         return Xdata, Ydata
 
-
-
