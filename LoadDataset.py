@@ -1,5 +1,5 @@
 import os
-from scipy import misc
+import matplotlib.image as misc
 import numpy as np
 
 

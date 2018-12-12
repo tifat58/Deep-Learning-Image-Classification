@@ -1,6 +1,6 @@
 import unittest
 import LoadDataset as LD
-from scipy import misc
+import matplotlib.image as misc
 import numpy as np
 
 
