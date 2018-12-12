@@ -1,5 +1,6 @@
 import os
 import matplotlib.image as misc
+from sklearn.utils import shuffle
 import numpy as np
 
 
@@ -28,11 +29,12 @@ class LoadData:
                 image = misc.imread(image_add)[:,:,:3]
                 Xdata.append(image)
                 Ydata.append(i)
-
-
-
-
             i = i + 1
         print('Files in current directory: ', os.listdir(current_dir))
         return Xdata, Ydata
+# Shuffeling the data
+    def shuffle_data(self , X, y):
+        return shuffle(X, y)
+
+
 
