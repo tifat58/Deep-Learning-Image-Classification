@@ -17,20 +17,21 @@ class LoadData:
 
     def generate_data(self):
         dir_list = os.listdir(self.address)
-        i = 0
         Xdata = []
         Ydata = []
-
+        i = 0
         for dir in dir_list:
+            cls_lbl = int(dir[1])
             current_dir = self.address + '/' + dir;
             all_image = os.listdir(current_dir)
             for image in all_image:
                 image_add = current_dir + '/' + image
                 image = misc.imread(image_add)[:,:,:3]
                 Xdata.append(image)
-                Ydata.append(i)
+                Ydata.append(cls_lbl)
             i = i + 1
-        print('Files in current directory: ', os.listdir(current_dir))
+
+        #print('Files in current directory: ', os.listdir(current_dir))
         return Xdata, Ydata
 # Shuffeling the data
     def shuffle_data(self , X, y):
