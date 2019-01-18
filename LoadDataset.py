@@ -2,6 +2,7 @@ import os
 import matplotlib.image as misc
 from sklearn.utils import shuffle
 import numpy as np
+import scipy
 
 
 class LoadData:
@@ -27,16 +28,17 @@ class LoadData:
             for image in all_image:
                 image_add = current_dir + '/' + image
                 image = misc.imread(image_add)[:,:,:3]
-                Xdata.append(image)
+                image_r = scipy.misc.imresize(image, (227,227,3))
+                Xdata.append(image_r)
+                print(image_r.shape)
                 Ydata.append(cls_lbl)
             i = i + 1
-<<<<<<< HEAD
+
             print(str(dir), ' directory images are fetched!!! ')
 #         print('Files in current directory: ', os.listdir(current_dir))
-=======
+
 
         #print('Files in current directory: ', os.listdir(current_dir))
->>>>>>> f7c9c129387a9915fda9aa7a17ba97e8d6634912
         return Xdata, Ydata
 # Shuffeling the data
     def shuffle_data(self , X, y):
