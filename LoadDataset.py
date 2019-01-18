@@ -30,7 +30,8 @@ class LoadData:
                 Xdata.append(image)
                 Ydata.append(i)
             i = i + 1
-        print('Files in current directory: ', os.listdir(current_dir))
+            print(str(dir), ' directory images are fetched!!! ')
+#         print('Files in current directory: ', os.listdir(current_dir))
         return Xdata, Ydata
 # Shuffeling the data
     def shuffle_data(self , X, y):
