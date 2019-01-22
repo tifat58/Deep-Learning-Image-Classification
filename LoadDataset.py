@@ -3,6 +3,7 @@ import matplotlib.image as misc
 from sklearn.utils import shuffle
 import numpy as np
 import scipy
+from skimage.transform import rescale, resize, downscale_local_mean
 
 
 class LoadData:
@@ -28,9 +29,11 @@ class LoadData:
             for image in all_image:
                 image_add = current_dir + '/' + image
                 image = misc.imread(image_add)[:,:,:3]
-                image_r = scipy.misc.imresize(image, (227,227,3))
+                image_r = resize(image, (227,227,3))
                 Xdata.append(image_r)
-                #print(image_r.shape)
+
+#                 print(image_r.shape)
+
                 Ydata.append(cls_lbl)
             i = i + 1
 
