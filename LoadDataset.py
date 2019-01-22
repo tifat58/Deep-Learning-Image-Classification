@@ -30,7 +30,7 @@ class LoadData:
                 image = misc.imread(image_add)[:,:,:3]
                 image_r = scipy.misc.imresize(image, (227,227,3))
                 Xdata.append(image_r)
-                print(image_r.shape)
+                #print(image_r.shape)
                 Ydata.append(cls_lbl)
             i = i + 1
 
@@ -44,5 +44,24 @@ class LoadData:
     def shuffle_data(self , X, y):
         return shuffle(X, y)
 
+    def generate_data_2cls(self, dir_list=['c0','c1','c2','c3','c4','c5','c6','c7','c8','c9']):
+        Xdata = []
+        Ydata = []
+        i = 0
+        for dir in dir_list:
+            cls_lbl = int(dir[1])
+            current_dir = self.address + '/' + dir;
+            all_image = os.listdir(current_dir)
+            for image in all_image:
+                image_add = current_dir + '/' + image
+                image = misc.imread(image_add)[:,:,:3]
+                image_r = scipy.misc.imresize(image, (227,227,3))
+                Xdata.append(image_r)
+                #print(image_r.shape)
+                Ydata.append(cls_lbl)
+            i = i + 1
 
+            print(str(dir), ' directory images are fetched!!! ')
+#         print('Files in current directory: ', os.listdir(current_dir))
+        return Xdata, Ydata
 
