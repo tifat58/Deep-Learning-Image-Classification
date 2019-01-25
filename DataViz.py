@@ -2,7 +2,7 @@ from scipy.ndimage.filters import gaussian_filter
 import matplotlib.pyplot as plt
 import numpy as np
 
-class DataViz:
+class DataVizulaize:
     
     def __init__(self, model):
         self.model = model
