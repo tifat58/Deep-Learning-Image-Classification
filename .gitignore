@@ -2,3 +2,5 @@ state_farm
 __pycache__
 .idea
 .ipynb_checkpoints
+X.npy
+Y.npy
