@@ -1,0 +1,255 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+
+
+
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+\hypersetup{
+	colorlinks   = true, %Colours links
+	urlcolor     = blue, %Colour for external hyperlinks
+	linkcolor    = blue, %Colour of internal links
+	citecolor   = green %Colour of citations
+}
+
+\cvprfinalcopy 
+
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\setcounter{page}{1}
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{\LaTeX\ Guidelines for Uplinx Seminar Final Report}
+
+\author{First Author\\
+{\tt\small firstauthor@i1.org}
+\and
+Second Author\\
+{\tt\small secondauthor@i2.org}
+\and
+Third Author\\
+{\tt\small thirdauthor@i3.org}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+   The ABSTRACT is to be in fully-justified italicized text, at the top
+   of the left-hand column, below the author information. Use the word 
+   ``Abstract'' as the title, in 12-point Times, boldface type, centered 
+   relative to the column, initially capitalized. The abstract is to be 
+   in 10-point, single-spaced type. It should be a concise summary of 
+   your final report. Limit yourself to about 150 words. 
+   Leave two blank lines after the Abstract, then begin the main text.   
+   
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\section{Report Content}
+These guidelines will help you structure the final report of your practical 
+assignment. The template is based on the Author Guidelines for CVPR 
+proceedings. Follow these guidelines when writing your report. No other 
+format will be accepted.
+
+
+
+%-------------------------------------------------------------------------
+\subsection{Structure}
+Your report should at least include the following:
+\begin{itemize}
+	\itemsep-0.4em 
+	\item \textbf{Title}: A few words that describe your project.
+	\item \textbf{Abstract}: A brief summary of the paper that tells your readers what they can expect. Include the motivation, problem statement, how you solve it, results, and conclusion.
+	\item \textbf{Introduction}: Give a motivation and state what the problem is. You can talk about convolutional neural networks, the domain of autonomous driving, etc.
+	\item \textbf{Related Work}: What other people have done in the past in relation to what you are doing.
+	\item \textbf{Method}: How you propose to solve the problem. This is the main section of your paper. Describe what you have done and how you solved the main task: the architecture, preprocessing, etc. Describe also what other subtasks you undertook: effect of transfer learning, amount of data necessary, architecture changes, hyperparameters, etc.
+	\item \textbf{Results}: Evaluation of your method. Describe the dataset, metrics, experiment design, etc.
+	\item \textbf{Discussion}: Analysis of the results, limitations, etc. How do your results match up to the stated problem.
+	\item \textbf{Conclusion}: Wrap up. Restate what you did, what you achieved and what needs to be done in the future. 
+	\item \textbf{References}: A list of the works you cite.
+\end{itemize}
+If it makes more sense to restructure the paper a little, feel free to do so, but make sure you still cover all this information somewhere.
+
+\begin{figure}[t]
+	\begin{center}
+		\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+		%\includegraphics[width=0.8\linewidth]{egfigure.eps}
+	\end{center}
+	\caption{Example of a figure. The caption is set in Roman so that mathematics
+		(always set in Roman: $B \sin A = A \sin B$) may be included without an
+		ugly clash.}
+	\label{fig:long}
+	\label{fig:onecol}
+\end{figure}
+
+\begin{figure*}
+	\begin{center}
+		\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+	\end{center}
+	\caption{This figure occupies both columns. Short caption is centered.}
+	\label{fig:short}
+\end{figure*}
+
+
+\subsection{Language}
+
+All manuscripts must be in English.
+
+\subsection{Paper length}
+Your paper should be at least 4 pages long and no longer than 8.
+
+%-------------------------------------------------------------------------
+
+\subsection{Mathematics}
+You might want to use equations to explain certain concepts. 
+\begin{equation} \label{eq:1}
+e^{\pi i} + 1 = 0
+\end{equation}
+Please number all of your sections and displayed equations.  It is
+important for you and your readers to be able to refer to any particular 
+equation, like equation \ref{eq:1} in this case. 
+
+
+\subsection{Figures}
+Just like math, images also help the reader understand what you are talking
+about. You can reference them just like equations. As in Figure \ref{fig:onecol}, 
+make sure you use captions. Captions should tell the reader what he's looking at
+without needing to lookup where in the text you talk about the image. Don't 
+overdo it though, explain the image concisely. 
+
+To include an image it's almost always best to use \verb+\includegraphics+, and 
+to specify the  figure width as a multiple of the line width as in the example
+below
+{\small\begin{verbatim}
+	\usepackage[dvips]{graphicx} ...
+	\includegraphics[width=0.8\linewidth]
+	{myfile.eps}
+	\end{verbatim}
+}
+
+
+
+
+
+
+
+Another possibility is to use tables, which may come in handy when presenting 
+and discussing the results.
+
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|l|c|}
+			\hline
+			Method & Frobnability \\
+			\hline\hline
+			Theirs & Frumpy \\
+			Yours & Frobbly \\
+			Ours & Makes one's heart Frob\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Results.   Ours is better.}
+	\label{tab:1}
+\end{table}
+
+\section{Formatting your paper}
+
+
+%------------------------------------------------------------------------
+
+
+This section introduces some important aspects on how to format your report 
+correctly.
+
+%-------------------------------------------------------------------------
+\subsection{Type-style and fonts}
+
+Wherever Times is specified, Times Roman may also be used. If neither is
+available on your word processor, please use the font closest in
+appearance to Times to which you have access.
+
+MAIN TITLE. Center the title 1-3/8 inches (3.49 cm) from the top edge of
+the first page. The title should be in Times 14-point, boldface type.
+Capitalize the first letter of nouns, pronouns, verbs, adjectives, and
+adverbs; do not capitalize articles, coordinate conjunctions, or
+prepositions (unless the title begins with such a word). Leave two blank
+lines after the title.
+
+AUTHOR NAME(s) are to be centered beneath the title
+and printed in Times 12-point, non-boldface type. This information is to
+be followed by two blank lines.
+
+\textbf{All text must be in a two-column format}. Long figures may occupy 
+both columns as in Figure \ref{fig:short}, but short captions should be 
+centered. 
+Each section should have some text, don't just introduce a subsection 
+directly below a section without first explaining what the section is about.
+
+MAIN TEXT. Type main text in 10-point Times, single-spaced. Do NOT use
+double-spacing. All paragraphs should be indented 1 pica (approx. 1/6
+inch or 0.422 cm). Make sure your text is fully justified---that is,
+flush left and flush right. Please do not place any additional blank
+lines between paragraphs.
+
+Figure and table captions should be 9-point Roman type as in
+Figures~\ref{fig:onecol}, ~\ref{fig:short} and Table ~\ref{tab:1}.
+
+
+%-------------------------------------------------------------------------
+\subsection{Footnotes}
+
+Please use footnotes\footnote {This is what a footnote looks like.  It
+often distracts the reader from the main flow of the argument.} sparingly.
+Indeed, try to avoid footnotes altogether and include necessary peripheral
+observations in the text (within parentheses, if you prefer, as in this sentence).
+If you wish to use a footnote, place it at the bottom of the column on the 
+page on which it is referenced. Use Times 8-point type, single-spaced.
+
+
+%-------------------------------------------------------------------------
+\subsection{References}
+List and number all bibliographical references in 9-point Times,
+single-spaced, at the end of your paper. When referenced in the text,
+enclose the citation number in square brackets, for
+example~\cite{Authors14}.  Where appropriate, include the name(s) of
+editors of referenced books.
+
+When citing a multi-author paper, you may save space by using ``et alia'',
+shortened to ``\etal'' (not ``{\em et.\ al.}'' as ``{\em et}'' is a complete word.)
+However, use it only when there are three or more authors.  Thus, the
+following is correct: ``
+Frobnication has been trendy lately.
+It was introduced by Alpher~\cite{Alpher02}, and subsequently developed by
+Alpher and Fotheringham-Smythe~\cite{Alpher03}, and Alpher \etal~\cite{Alpher04}.''
+
+This is incorrect: ``... subsequently developed by Alpher \etal~\cite{Alpher03} ...''
+because reference~\cite{Alpher03} has just two authors.  If you use the
+\verb'\etal' macro provided, then you need not worry about double periods
+when used at the end of a sentence as in Alpher \etal.
+
+
+
+
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{egbib}
+}
+
+\end{document}
